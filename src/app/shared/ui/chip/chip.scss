@@ -1,0 +1,40 @@
+@use '@angular/material' as mat;
+
+:host {
+  padding: 0.33rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  pointer-events: none;
+
+  // Each variant sets a Material background token and its matching `on-` token,
+  // so the text colour always has the right contrast with the pill background.
+  --chip-bg: var(--mat-sys-primary);
+  --chip-fg: var(--mat-sys-on-primary);
+  background: var(--chip-bg);
+  color: var(--chip-fg);
+}
+
+:host.warn {
+  --chip-bg: var(--mat-sys-error-container);
+  --chip-fg: var(--mat-sys-on-error-container);
+}
+
+:host.primary {
+  --chip-bg: var(--mat-sys-primary-container);
+  --chip-fg: var(--mat-sys-on-primary-container);
+}
+
+:host.secondary {
+  --chip-bg: var(--mat-sys-tertiary-container);
+  --chip-fg: var(--mat-sys-on-tertiary-container);
+}
+
+:host.sm {
+  padding: 0rem 0.5rem;
+  font-size: 0.7rem;
+}
+
+:host.square {
+  border-radius: 0.25rem;
+}

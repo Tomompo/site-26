@@ -1,0 +1,35 @@
+<article class="portfolio-item">
+  <div class="item-main">
+    <div class="main-head">
+      <div class="head-title">
+        <h2>{{ portfollioItem().title }}</h2>
+
+        @if (portfollioItem().isNew) {
+          <app-chip size="sm" colour="warn" shape="square">NEW</app-chip>
+        }
+      </div>
+
+      @let startDate = portfollioItem().startDate;
+      @let endDate = portfollioItem().endDate;
+
+      <h3>
+        {{ startDate }}
+        @if (endDate !== startDate) {
+          - {{ !!endDate ? endDate : 'present' }}
+        }
+      </h3>
+    </div>
+
+    <p>{{ portfollioItem().description }}</p>
+
+    <div class="main-skills">
+      @for (item of portfollioItem().tags; track $index) {
+        <app-chip colour="primary">{{ item }}</app-chip>
+      }
+    </div>
+  </div>
+
+  <div class="item-image">
+    <span [style.background-image]="`url(${portfollioItem().imageUrl})`"></span>
+  </div>
+</article>
