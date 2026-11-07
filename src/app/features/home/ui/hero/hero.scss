@@ -15,7 +15,7 @@ h2 {
 
 .hero {
   border-bottom: solid 2px #212121; //#303030
-  background: url(https://bickle.dev/assets/images/dawn.jpg) center bottom -100px;
+  background: url('/assets/img/dawn.jpg') center bottom;
   background-size: cover;
 
   .hero-text {
@@ -28,5 +28,11 @@ h2 {
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.35);
+  }
+}
+
+@media (min-width: 1040px) {
+  .hero {
+    background-position: center bottom -100px;
   }
 }
